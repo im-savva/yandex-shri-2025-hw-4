@@ -96,10 +96,6 @@ export const createAnalyticsSlice: StateCreator<
           currentMetrics: metrics,
         },
       }));
-
-      if (metrics) {
-        get().history.upsertReport(metrics);
-      }
     },
   },
 });

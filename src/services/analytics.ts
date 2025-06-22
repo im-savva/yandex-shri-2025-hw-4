@@ -99,10 +99,10 @@ export const AnalyticsService = {
   processFile: async (
     file: File,
     callback: (error: string | null, metrics: GalacticReport | null) => void
-  ): Promise<void> => {
+  ): Promise<GalacticReport | null> => {
     if (!AnalyticsService.validateFile(file)) {
       callback("Неверный формат файла", null);
-      return;
+      return null;
     }
 
     const fileName = file.name;
@@ -110,7 +110,7 @@ export const AnalyticsService = {
     const id = AnalyticsService.generateId();
 
     const intialReport: RawGalacticReport = {
-      total_spend_galactic: null!,
+      total_spend_galactic: 0,
       rows_affected: 0,
       less_spent_at: 0,
       big_spent_at: 0,
@@ -175,5 +175,7 @@ export const AnalyticsService = {
     if (!AnalyticsService.validateReport(result)) {
       throw new Error("Некорректные данные в файле");
     }
+
+    return result;
   },
 };

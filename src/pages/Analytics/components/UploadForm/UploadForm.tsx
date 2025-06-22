@@ -25,6 +25,8 @@ export const UploadForm = () => {
     setCurrentMetrics,
   } = useStore((state) => state.analytics);
 
+  const { upsertReport } = useStore((state) => state.history);
+
   const handleUploadButtonClick = () => {
     if (isLoading) return;
 
@@ -72,10 +74,14 @@ export const UploadForm = () => {
       }
     };
 
-    const processFileSuccess = () => {
-      setIsLoading(false);
+    const processFileSuccess = (report: GalacticReport | null) => {
       setIsSuccess(true);
+      setIsLoading(false);
       setError(null);
+
+      if (!report) return;
+
+      upsertReport(report);
     };
 
     AnalyticsService.processFile(file, processFileCallback)
