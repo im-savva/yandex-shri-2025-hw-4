@@ -75,13 +75,17 @@ export const UploadForm = () => {
     };
 
     const processFileSuccess = (report: GalacticReport | null) => {
-      setIsSuccess(true);
-      setIsLoading(false);
-      setError(null);
-
       if (!report) return;
 
       upsertReport(report);
+
+      if (!report.isValid) {
+        processFileCallback("Некорректные данные в файле", null);
+      } else {
+        setIsSuccess(true);
+        setIsLoading(false);
+        setError(null);
+      }
     };
 
     AnalyticsService.processFile(file, processFileCallback)

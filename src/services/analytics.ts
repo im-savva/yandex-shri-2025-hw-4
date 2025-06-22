@@ -172,10 +172,6 @@ export const AnalyticsService = {
       }
     }
 
-    if (!AnalyticsService.validateReport(result)) {
-      throw new Error("Некорректные данные в файле");
-    }
-
     return result;
   },
 };
