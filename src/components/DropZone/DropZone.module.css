@@ -1,0 +1,43 @@
+.drop-zone {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+
+  height: auto;
+  width: 100%;
+
+  border-radius: var(--border-radius-large);
+
+  border: var(--drop-zone-border);
+  background: var(--drop-zone-background);
+
+  padding: var(--spacing-level-2);
+
+  cursor: pointer;
+}
+
+.state-default {
+  --drop-zone-border: none;
+  --drop-zone-background: rgb(var(--color-purple), 0.3);
+}
+
+.state-error {
+  --drop-zone-border: 1px solid rgb(var(--color-red));
+  --drop-zone-background: transparent;
+}
+
+.state-fileSelected {
+  --drop-zone-border: 1px solid rgb(var(--color-black));
+  --drop-zone-background: transparent;
+}
+
+.dragging {
+  --drop-zone-border: none;
+  --drop-zone-background: rgb(var(--color-green), 0.3);
+}
+
+.drop-zone[disabled] {
+  cursor: default;
+}

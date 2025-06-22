@@ -1,0 +1,135 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --color-green: 42, 232, 129;
+  --color-yellow: 252, 227, 0;
+  --color-purple: 203, 129, 255;
+  --color-white: 255, 255, 255;
+  --color-orange: 255, 95, 0;
+  --color-warm-white: 249, 249, 249;
+  --color-black: 23, 23, 23;
+  --color-red: 255, 0, 0;
+
+  --opacity-primary: 1;
+  --opacity-secondary: 0.75;
+  --opacity-tertiary: 0.5;
+  --opacity-quaternary: 0.25;
+
+  --spacing-level-1: 47px;
+  --spacing-level-2: 27px;
+  --spacing-level-3: 18px;
+  --spacing-level-4: 9px;
+  --spacing-level-5: 3px;
+
+  --body-container-width-medium: 1400px;
+  --body-container-width-large: 1800px;
+
+  --text-size-header-ultra-large: 48px;
+  --text-size-header-large: 32px;
+  --text-size-header-medium: 24px;
+  --text-size-header-small: 20px;
+  --text-size-text-large: 18px;
+  --text-size-text-medium: 16px;
+  --text-size-text-small: 14px;
+  --text-size-text-ultra-small: 12px;
+
+  --border-radius-small: 9px;
+  --border-radius-medium: 15px;
+  --border-radius-large: 19px;
+
+  --large-animation-timing-function: cubic-bezier(0.66, 0, 0.2, 1);
+  --medium-animation-timing-function: cubic-bezier(0.5, 0, 0.3, 1);
+  --small-animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+
+  --font-family-text: "Roboto";
+  --font-family-header: "Roboto";
+
+  --vh: 1dvh;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--color-white);
+  font-family: var(--font-family-text);
+  font-weight: 400;
+  overflow-x: hidden;
+  --text-color: var(--color-black);
+
+  background: rgb(var(--color-purple), 0.15);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: stretch;
+  align-items: stretch;
+
+  width: 100%;
+  max-width: var(--body-container-width-medium);
+
+  margin: 0 auto;
+  padding: 0 var(--spacing-level-3);
+
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  position: relative;
+  font-family: var(--font-inter);
+}
+
+*:active,
+*:focus {
+  outline: none;
+}
+
+*::-moz-focus-inner {
+  border: 0;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+a {
+  color: inherit;
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+
+  width: 100%;
+  height: auto;
+
+  gap: var(--spacing-level-2);
+  padding: var(--spacing-level-1) 0;
+
+  flex-grow: 1;
+}
+
+.layout-container > .layout-group {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+
+  width: 100%;
+  height: auto;
+
+  gap: var(--spacing-level-3);
+}
+
+.layout-container > .layout-group.layout-stretch {
+  flex-grow: 1;
+}

@@ -1,0 +1,66 @@
+.menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: var(--spacing-level-3);
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  gap: var(--spacing-level-5);
+
+  padding: var(--spacing-level-4) 0;
+
+  color: rgb(var(--color-black));
+  font-size: var(--text-size-text-medium);
+
+  --icon-size: var(--text-size-text-medium);
+
+  border-bottom: 2px solid transparent;
+
+  cursor: pointer;
+
+  transition: transform 0.15s var(--small-animation-timing-function);
+
+  text-decoration: none;
+}
+
+.menu-item.active {
+  border-bottom: 2px solid rgb(var(--color-black));
+}
+
+.menu-item:active {
+  transform: scale(0.95);
+}
+
+.menu-item:hover {
+  filter: brightness(1.1);
+}
+
+.menu-item > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item svg {
+  height: var(--icon-size);
+  width: var(--icon-size);
+
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.menu-item svg > * {
+  fill: currentColor;
+  stroke-width: 3px;
+  stroke: currentColor;
+}

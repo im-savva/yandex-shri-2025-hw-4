@@ -1,0 +1,30 @@
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: var(--spacing-level-4) 0;
+}
+
+.top-bar > .group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+
+  gap: var(--spacing-level-3);
+}
+
+.top-bar > .group > .logo {
+  height: var(--text-size-header-medium);
+  width: auto;
+}
+
+.top-bar > .group > .logo > img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}

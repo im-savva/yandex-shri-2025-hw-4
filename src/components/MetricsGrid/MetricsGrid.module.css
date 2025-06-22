@@ -1,0 +1,45 @@
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-level-5);
+}
+
+.metrics-grid.shrinked {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.metrics-row {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+
+  padding: var(--spacing-level-3);
+  gap: var(--spacing-level-5);
+
+  border-radius: var(--border-radius-medium);
+
+  background: var(--metrics-row-background);
+}
+
+.color-purple {
+  --metrics-row-background: rgb(var(--color-purple), 0.15);
+}
+
+.color-white {
+  --metrics-row-background: rgb(var(--color-white));
+}
+
+.metrics-row > .label {
+  font-size: var(--text-size-text-small);
+  font-weight: 400;
+  color: rgb(var(--color-black));
+  opacity: var(--opacity-secondary);
+}
+
+.metrics-row > .value {
+  font-size: var(--text-size-header-medium);
+  font-weight: 700;
+  color: rgb(var(--color-black));
+}

@@ -1,0 +1,82 @@
+.reports-group {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: stretch;
+  align-items: stretch;
+
+  width: 100%;
+  height: 100%;
+
+  padding: var(--spacing-level-5);
+  gap: var(--spacing-level-5);
+}
+
+.report-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: stretch;
+  align-items: stretch;
+
+  gap: var(--spacing-level-5);
+
+  cursor: pointer;
+}
+
+.report-row[disabled] {
+  cursor: default;
+}
+
+.report-row > .report-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: stretch;
+  align-items: center;
+
+  flex: 1;
+
+  border-radius: var(--border-radius-medium);
+  background: rgb(var(--color-purple));
+
+  color: rgb(var(--color-white));
+  font-size: var(--text-size-text-medium);
+
+  padding: var(--spacing-level-3);
+  gap: var(--spacing-level-4);
+}
+
+.report-row > .report-info > div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  flex: 1;
+}
+
+.report-row > .report-info > div > * {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.report-row > .report-info > div > svg {
+  height: var(--text-size-text-medium);
+  width: var(--text-size-text-medium);
+
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.report-row > .report-info > div > svg > * {
+  fill: currentColor;
+  stroke-width: 3px;
+  stroke: currentColor;
+}

@@ -1,0 +1,57 @@
+.animated-loader {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1;
+}
+
+.animated-loader > svg {
+  height: 100%;
+  width: auto;
+  overflow: visible;
+  height: var(--animated-loader-size, 16px) !important;
+  width: var(--animated-loader-size, 16px) !important;
+
+  will-change: rotate;
+
+  vector-effect: non-scaling-stroke;
+  animation: rotate-loader 1s infinite var(--large-animation-timing-function);
+}
+
+.animated-loader > svg * {
+  fill: none !important;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 36;
+  stroke-width: 3px;
+
+  will-change: stroke-dashoffset;
+
+  animation: vanish-loader-blades 1s infinite
+    var(--large-animation-timing-function);
+}
+
+@keyframes rotate-loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(39deg);
+  }
+}
+
+@keyframes vanish-loader-blades {
+  0% {
+    stroke-dashoffset: -8;
+  }
+
+  100% {
+    stroke-dashoffset: -64;
+  }
+}
