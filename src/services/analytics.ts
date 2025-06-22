@@ -110,7 +110,7 @@ export const AnalyticsService = {
     const id = AnalyticsService.generateId();
 
     const intialReport: RawGalacticReport = {
-      total_spend_galactic: 0,
+      total_spend_galactic: null!,
       rows_affected: 0,
       less_spent_at: 0,
       big_spent_at: 0,

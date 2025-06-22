@@ -73,10 +73,12 @@
 
   fill: none;
   vector-effect: non-scaling-stroke;
+
+  flex-shrink: 0;
 }
 
 .report-row > .report-info > div > svg > * {
   fill: currentColor;
-  stroke-width: 3px;
+  stroke-width: 1px;
   stroke: currentColor;
 }

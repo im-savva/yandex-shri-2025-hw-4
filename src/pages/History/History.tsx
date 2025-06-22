@@ -65,6 +65,7 @@ export function HistoryPage() {
               zIndex: 1000,
               overflow: "auto",
             }}
+            onClick={() => setSelectedReport(null)}
           >
             <div
               style={{
@@ -74,12 +75,14 @@ export function HistoryPage() {
                 padding: "20px",
                 borderRadius: "8px",
               }}
+              onClick={(e) => e.stopPropagation()}
             >
               <Button
                 theme="filled"
                 color="black"
                 icon={<CancelIcon />}
                 onClick={() => setSelectedReport(null)}
+                style={{ margin: "0 0 5px auto" }}
               />
               <HighlightsGrid isShrinked metrics={selectedReport} />
             </div>
