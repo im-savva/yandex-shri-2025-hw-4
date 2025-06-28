@@ -28,11 +28,14 @@ export const useMetricsRow = ({
     children: label,
   };
 
-  const metricsRowProps: React.HTMLAttributes<HTMLDivElement> = {
+  const metricsRowProps: React.HTMLAttributes<HTMLDivElement> & {
+    "data-testid": string;
+  } = {
     className: classNames(
       metricsGridStyles["metrics-row"],
       metricsGridStyles[`color-${color}`]
     ),
+    "data-testid": "metrics-row",
   };
 
   return { metricsRowProps, metricsValueProps, metricsLabelProps };

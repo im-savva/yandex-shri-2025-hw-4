@@ -17,10 +17,10 @@ export interface GeneratorSlice {
 }
 
 export const createGeneratorSlice: StateCreator<
-  StoreState,
+  Pick<StoreState, "generator">,
   [],
   [],
-  { generator: GeneratorSlice }
+  Pick<StoreState, "generator">
 > = (set, get) => ({
   generator: {
     resetFileState: () => {
@@ -68,8 +68,8 @@ export const createGeneratorSlice: StateCreator<
     isLoading: false,
     setIsLoading: (isLoading: boolean) => {
       set((state) => ({
-        analytics: {
-          ...state.analytics,
+        generator: {
+          ...state.generator,
           isLoading,
         },
       }));
@@ -78,8 +78,8 @@ export const createGeneratorSlice: StateCreator<
     isSuccess: false,
     setIsSuccess: (isSuccess: boolean) => {
       set((state) => ({
-        analytics: {
-          ...state.analytics,
+        generator: {
+          ...state.generator,
           isSuccess,
         },
       }));
@@ -88,8 +88,8 @@ export const createGeneratorSlice: StateCreator<
     error: null,
     setError: (error: string | null) => {
       set((state) => ({
-        analytics: {
-          ...state.analytics,
+        generator: {
+          ...state.generator,
           error,
         },
       }));

@@ -14,10 +14,10 @@ export interface HistorySlice {
 }
 
 export const createHistorySlice: StateCreator<
-  StoreState,
+  Pick<StoreState, "history">,
   [],
   [],
-  { history: HistorySlice }
+  Pick<StoreState, "history">
 > = (set) => ({
   history: {
     reports: HistoryApi.getReports(),

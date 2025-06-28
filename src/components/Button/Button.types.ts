@@ -11,10 +11,12 @@ export interface ButtonProps {
   icon?: React.ReactNode;
 
   style?: React.CSSProperties;
+
+  title?: string;
 }
 
 export interface ButtonGroupProps {
   children: React.ReactNode;
 
-  description?: string;
+  description?: React.ReactNode;
 }

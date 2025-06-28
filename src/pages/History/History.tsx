@@ -4,10 +4,10 @@ import type { GalacticReport } from "../../App.types";
 import { Button } from "../../components/Button/Button";
 import { ButtonGroup } from "../../components/Button/ButtonGroup";
 import { HighlightsGrid } from "../../components/HighlightsGrid/HighlightsGrid";
+import CancelIcon from "../../components/icons/CancelIcon";
 import { ReportRow } from "../../components/ReportsGroup/ReportRow";
 import { ReportsGroup } from "../../components/ReportsGroup/ReportsGroup";
 import { useStore } from "../../store/store";
-import CancelIcon from "../../components/icons/CancelIcon";
 
 export function HistoryPage() {
   const { reports, removeReport, clearReports } = useStore(
@@ -80,6 +80,7 @@ export function HistoryPage() {
               <Button
                 theme="filled"
                 color="black"
+                title="Закрыть"
                 icon={<CancelIcon />}
                 onClick={() => setSelectedReport(null)}
                 style={{ margin: "0 0 5px auto" }}
