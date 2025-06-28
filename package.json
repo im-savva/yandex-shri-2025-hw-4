@@ -8,8 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "install:playwright": "playwright install",
     "test:unit": "vitest --watch",
-    "test:e2e": "playwright test --ui",
+    "test:e2e": "playwright test",
     "test": "npm-run-all --parallel test:unit test:e2e"
   },
   "dependencies": {

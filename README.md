@@ -68,6 +68,7 @@
 
 - **Запустить только E2E-тесты:**
   ```sh
+  npm run install:playwright [надо запустить только один раз]
   npm run test:e2e
   ```
 
