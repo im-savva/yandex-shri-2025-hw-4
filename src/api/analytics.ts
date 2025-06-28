@@ -5,6 +5,10 @@ export const AnalyticsApi = {
     file: File,
     rowsCount = 10_000
   ): Promise<ReadableStreamDefaultReader<Uint8Array<ArrayBufferLike>>> => {
+    if (rowsCount <= 0) {
+      throw new Error("Количество строк должно быть больше 0");
+    }
+
     const formData = new FormData();
     formData.append("file", file);
 

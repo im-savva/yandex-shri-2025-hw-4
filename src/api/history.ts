@@ -11,7 +11,7 @@ export const HistoryApi = {
     }
   },
 
-  setReports: (reports: GalacticReport[]) => {
+  setReports: (reports: GalacticReport[] = []) => {
     localStorage.setItem("reports", JSON.stringify(reports));
   },
 

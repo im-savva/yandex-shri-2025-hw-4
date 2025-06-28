@@ -110,13 +110,15 @@ export const UploadForm = () => {
         {file ? (
           <ButtonGroup
             description={
-              error
-                ? error
-                : isLoading
-                ? "идёт парсинг файла"
-                : isSuccess
-                ? "готово!"
-                : "файл загружен!"
+              <span data-testid="upload-status">
+                {error
+                  ? error
+                  : isLoading
+                  ? "идёт парсинг файла"
+                  : isSuccess
+                  ? "готово!"
+                  : "файл загружен!"}
+              </span>
             }
           >
             <Button
@@ -130,13 +132,18 @@ export const UploadForm = () => {
               <Button
                 theme="filled"
                 color="black"
+                title="Сбросить"
                 icon={<CancelIcon />}
                 onClick={() => resetFileState()}
               />
             )}
           </ButtonGroup>
         ) : (
-          <ButtonGroup description="или перетащите файл сюда">
+          <ButtonGroup
+            description={
+              <span data-testid="upload-status">или перетащите файл сюда</span>
+            }
+          >
             <Button
               theme="filled"
               color="white"

@@ -17,7 +17,10 @@ export const HIGHLIGHT_TITLES: Record<GalacticReportKey, string> = {
   less_spent_civ: "цивилизация с минимальными расходами",
 };
 
-export const validHighlightKeys = Object.keys(HIGHLIGHT_TITLES);
+export const validHighlightKeys = [
+  ...Object.keys(HIGHLIGHT_TITLES),
+  "less_spent_value",
+];
 
 export const AnalyticsService = {
   generateId(): string {

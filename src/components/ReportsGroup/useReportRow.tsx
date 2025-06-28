@@ -4,10 +4,13 @@ import reportsGroupStyles from "./ReportsGroup.module.css";
 import TrashIcon from "../icons/TrashIcon";
 
 export const useReportRow = ({ report, onClick, onDelete }: ReportRowProps) => {
-  const reportRowProps: React.ButtonHTMLAttributes<HTMLDivElement> = {
+  const reportRowProps: React.ButtonHTMLAttributes<HTMLDivElement> & {
+    "data-testid": string;
+  } = {
     className: reportsGroupStyles["report-row"],
     onClick: report.isValid ? () => onClick?.(report) : undefined,
     disabled: !report.isValid,
+    "data-testid": "report-row",
   };
 
   const reportInfoProps: React.HTMLAttributes<HTMLDivElement> = {
@@ -21,6 +24,7 @@ export const useReportRow = ({ report, onClick, onDelete }: ReportRowProps) => {
     theme: "plain",
 
     icon: <TrashIcon />,
+    title: "Удалить",
 
     style: { flexShrink: 0, width: "55px" },
   };

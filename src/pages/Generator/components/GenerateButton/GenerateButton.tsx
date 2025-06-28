@@ -10,12 +10,14 @@ export const GenerateButton = () => {
   return (
     <ButtonGroup
       description={
-        error ||
-        (isLoading
-          ? "идёт процесс генерации"
-          : isSuccess
-          ? "файл сгенерирован"
-          : "")
+        <span data-testid="generate-status">
+          {error ||
+            (isLoading
+              ? "идёт процесс генерации"
+              : isSuccess
+              ? "файл сгенерирован"
+              : "")}
+        </span>
       }
     >
       <Button
@@ -29,6 +31,7 @@ export const GenerateButton = () => {
         <Button
           theme="filled"
           color="black"
+          title="Сбросить"
           icon={<CancelIcon />}
           onClick={() => resetFileState()}
         />

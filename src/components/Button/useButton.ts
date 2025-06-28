@@ -15,6 +15,8 @@ export const useButton = ({
   text,
 
   style = {},
+
+  title = "",
 }: ButtonProps) => {
   const className = classNames(
     buttonStyles["button"],
@@ -24,14 +26,19 @@ export const useButton = ({
     isLoading ? buttonStyles["loading"] : ""
   );
 
-  const buttonProps: React.ButtonHTMLAttributes<HTMLButtonElement> = {
+  const buttonProps: React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    "data-testid": string;
+  } = {
     onClick: (event) => {
+      if (isDisabled || isLoading) return;
       event.stopPropagation();
       onClick?.();
     },
     className,
     disabled: isDisabled,
     style,
+    "data-testid": "button",
+    title,
   };
 
   const animatedLoaderContainerProps: React.HTMLAttributes<HTMLDivElement> = {
@@ -42,5 +49,7 @@ export const useButton = ({
     children: icon || text,
     buttonProps,
     animatedLoaderContainerProps,
+
+    isLoading,
   };
 };

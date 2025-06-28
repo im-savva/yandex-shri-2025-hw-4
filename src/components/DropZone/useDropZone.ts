@@ -61,6 +61,7 @@ export const useDropZone = ({
 
   const dropZoneProps: React.ButtonHTMLAttributes<HTMLDivElement> & {
     ref: React.Ref<HTMLDivElement>;
+    "data-testid"?: string;
   } = {
     ref: dropZoneRef,
     className: classNames(
@@ -68,6 +69,7 @@ export const useDropZone = ({
       dropZoneStyles[`state-${state}`],
       isDragging && dropZoneStyles["dragging"]
     ),
+    "data-testid": "drop-zone",
     onClick,
     disabled: isDisabled,
   };

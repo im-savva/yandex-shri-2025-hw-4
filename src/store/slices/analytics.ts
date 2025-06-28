@@ -23,10 +23,10 @@ export interface AnalyticsSlice {
 }
 
 export const createAnalyticsSlice: StateCreator<
-  StoreState,
+  Pick<StoreState, "analytics">,
   [],
   [],
-  { analytics: AnalyticsSlice }
+  Pick<StoreState, "analytics">
 > = (set, get) => ({
   analytics: {
     file: null,

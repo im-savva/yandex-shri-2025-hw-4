@@ -1,7 +1,7 @@
 export interface DropZoneProps {
   state?: "default" | "error" | "fileSelected";
 
-  children: React.ReactNode;
+  children?: React.ReactNode;
 
   isDisabled?: boolean;
 

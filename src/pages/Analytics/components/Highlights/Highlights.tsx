@@ -4,11 +4,11 @@ import { useStore } from "../../../../store/store";
 import { EmptyBanner } from "../EmptyBanner/EmptyBanner";
 
 export const Highlights = () => {
-  const { currentMetrics } = useStore((state) => state.analytics);
+  const { currentMetrics, error } = useStore((state) => state.analytics);
 
   return (
     <div className={classNames("layout-group", "layout-stretch")}>
-      {currentMetrics && currentMetrics.isValid ? (
+      {currentMetrics && currentMetrics.isValid && !error ? (
         <HighlightsGrid metrics={currentMetrics} />
       ) : (
         <EmptyBanner />

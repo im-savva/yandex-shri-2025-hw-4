@@ -1,8 +1,11 @@
 import topBarStyles from "./TopBar.module.css";
 
 export const useTopBar = () => {
-  const topBarProps: React.HTMLAttributes<HTMLDivElement> = {
+  const topBarProps: React.HTMLAttributes<HTMLDivElement> & {
+    "data-testid": string;
+  } = {
     className: topBarStyles["top-bar"],
+    "data-testid": "top-bar",
   };
 
   const topBarGroupProps: React.HTMLAttributes<HTMLDivElement> = {
